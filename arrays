@@ -1,0 +1,181 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void traverse(int [][]arg){
+        //traversing
+        for(int i=0; i<3; i++){
+            for(int j=0; j<3; j++){
+                System.out.print(arg[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void traverse_1d(int []arg){
+        for(int element : arg){
+            System.out.print(element + " ");
+        }
+        System.out.println();
+    }
+
+
+     public static void main(String[] args) {
+
+         Scanner sc = new Scanner(System.in);
+         System.out.println("This is a menu driven program!");
+
+         //System.out.println("Enter 9 numbers of a 3x3 matrix");
+         // creating
+         int a[][] = {{1,2,3},{4,5,6},{7,8,9}};
+//         int a[][]  = new int[3][3];
+//         for(int i=0; i<3; i++){
+//             for(int j=0; j<3; j++){
+//                 int n = sc.nextInt();
+//                 a[i][j] = n;
+//             }
+//         }
+
+         //System.out.println("Enter 9 numbers of a 3x3 matrix");
+         // creating
+         int b[][] = {{9,2,3},{4,9,6},{7,8,9}};
+//         int b[][]  = new int[3][3];
+//         for(int i=0; i<3; i++){
+//             for(int j=0; j<3; j++){
+//                 int n = sc.nextInt();
+//                 b[i][j] = n;
+//             }
+//         }
+
+//         System.out.println("Enter 10 numbers for a 1D array");
+//         int c[] = new int[10];
+//         for(int i=0; i<10; i++){
+//             c[i] = sc.nextInt();
+//         }
+         int c[] = {1,9,3,4,5,3,7,8,9,10};
+
+         int choice;
+         do {
+             System.out.println("--------------------------------------------------------------------------");
+             System.out.println("1. Circulation of array (L -> R)" +
+                     "\n2. Circulation of array  (R -> L)" +
+                     "\n3. Upper triangle" +
+                     "\n4. Lower triangle" +
+                     "\n5. print duplicates in 1D array" +
+                     "\n6. print unique elements in 1D array" +
+                     "\n7. Transpose array" +
+                     "\n8. sum of columns and sum of sum of rows" +
+                     "\n9. Check if matrices are same or not" +
+                     "\n0. Exit\nChoice: ");
+             choice = sc.nextInt();
+             System.out.println("--------------------------------------------------------------------------");
+             switch (choice){
+                 case 1: {
+                     int t = c[c.length - 1];
+                     for (int i = 9; i >= 1; i--) {
+                         c[i] = c[i - 1];
+                     }
+                     c[0] = t;
+                     traverse_1d(c);
+                     break;
+                 }
+                 case 2: {
+                     int t = c[0];
+                     for (int i = 0; i <= 8; i++) {
+                         c[i] = c[i+1];
+                     }
+                     c[c.length-1] = t;
+                     traverse_1d(c);
+                     break;
+                 }
+                 case 3: {
+                     for(int i=0; i<3; i++){
+                         for(int j=0; j<3; j++){
+                             if(i>j)System.out.print(0 +" ");
+                             else System.out.print(a[i][j] + " ");
+                         }
+                         System.out.println();
+                     }
+                     break;
+                 }
+                 case 4: {
+                     for(int i=0; i<3; i++){
+                         for(int j=0; j<3; j++){
+                             if(i<j)System.out.print(0 +" ");
+                             else System.out.print(a[i][j] + " ");
+                         }
+                         System.out.println();
+                     }
+                     break;
+                 }
+                 case 5: {
+                     System.out.print("Duplicates: ");
+                     for(int i:c){
+                         int f=0;
+                         for(int j:c){
+                             if(i==j)f++;
+                         }
+                         if(f >=2){
+                             System.out.print(i+" ");
+                         }
+                     }
+                     System.out.println();
+                     break;
+                 }
+                 case 6: {
+                     for(int i:c){
+                         int f=0;
+                         for(int j:c){
+                             if(i==j)f++;
+                         }
+                         if(f <2){
+                             System.out.print(i+" ");
+                         }
+                     }
+                     System.out.println();
+                     break;
+                 }
+                 case 7: {
+                     System.out.println("Original:");
+                     traverse(a);
+                     System.out.println("Transpose: ");
+                     for(int i=0; i<3; i++){
+                         for(int j=0; j<3; j++){
+                             System.out.print(a[j][i]+" ");
+                         }
+                         System.out.println();
+                     }
+                     break;
+                 }
+                 case 8: {
+                     System.out.println("Original:");
+                     traverse(b);
+                     for(int i=0; i<3; i++){
+                         int rows=0;
+                         int cols = 0;
+                         for(int j=0; j<3; j++){
+                             rows += b[i][j];
+                             cols += b[j][i];
+                         }
+                         System.out.println("Rows: "+rows);
+                         System.out.println("Colums = "+cols);
+                     }
+                     break;
+                 }
+                 case 9: {
+                     System.out.println("Original:");
+                     traverse(a);
+                     for(int i=0; i<3; i++){
+                         for(int j=0; j<3; j++){
+                             if(a[i][j] == b[i][j])System.out.print(a[i][j]+" ");
+                             else System.out.print("* ");
+                         }
+                         System.out.println();
+                     }
+                 }
+             }
+
+         }while(choice != 0);
+
+    }
+}
