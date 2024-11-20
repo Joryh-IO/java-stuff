@@ -1,0 +1,63 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args){
+
+        Scanner sc = new Scanner(System.in);
+//        System.out.print("Enter a sentence: ");
+//        String a = "hello how are you"; //sc.nextLine();
+//        char a1[] = a.toCharArray();
+//        int spaces = 0, character = 0;
+//        for(char element:a1){
+//            if(element == ' ')spaces++;
+//            else character++;
+//        }
+//        int words = spaces+1;
+//        System.out.println("word = "+words+"\nspaces = "+spaces+"\ncharacters = "+character);
+
+//        String b = "helloworld";
+//        char b1[] = b.toCharArray();
+//        String pal="";
+//        for(int i=b.length()-1; i>=0; i--){
+//            pal += b1[i];
+//        }
+//        System.out.println(pal);
+//
+//        //anagram
+//        String d = "race";
+//        char d1[] = d.toCharArray();
+//        String e = "care";
+//        char e1[] = e.toCharArray();
+//        Arrays.sort(d1);
+//        Arrays.sort(e1);
+//        if(d1.length == e1.length) {
+//            if (Arrays.equals(d1, e1)) System.out.println("yes");
+//            else System.out.println("no");
+//        }
+//        else System.out.println("no");
+
+        // PRINTING EACH WORD IN REVERSE
+//        String a = "hello how are you"; //sc.nextLine();
+//        String a1[] = a.split(" ");
+//        for(String element: a1){
+//            String ans = "";
+//            for(int i=element.length()-1; i>=0; i--){
+//                ans += element.charAt(i);
+//            }
+//            System.out.print(ans+" ");
+//        }
+
+        //PRINTING LARGEST LENGTH
+//        String a = "hello how are youur"; //sc.nextLine();
+//        String a1[] = a.split(" ");
+//        int len = a1[0].length();
+//        for(String element: a1){
+//            if(element.length()>len)len = element.length();
+//        }
+//        System.out.println("largest = "+len);
+
+        //
+
+    }
+}
