@@ -1,0 +1,163 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+
+class Bank{
+    String name;
+    int balance;
+    String bank_name;
+    public int id;
+
+    void acc_create(String n, int bal, String bankn, int userid){
+        balance = bal;
+        name = n;
+        bankn = bank_name;
+        id = userid;
+    }
+    void withdraw(int n){balance -= n;}
+
+    void deposit(int n){balance += n;}
+
+    void display(){
+        System.out.println("******************************");
+        System.out.println("Name: "+name);
+        System.out.println("Balance: "+balance);
+        System.out.println("Bank Name: "+bank_name);
+        System.out.println("ID: "+ id);
+        System.out.println("******************************");
+    }
+
+}
+
+
+public class Main {
+    public static void main(String[] args){
+
+        Scanner sc = new Scanner(System.in);
+        Bank biboSet[] = new Bank[10];
+        biboSet[0] =new Bank();
+        biboSet[0].bank_name = "BigBoy";
+        biboSet[0].balance = 50000;
+        biboSet[0].name = "icici";
+        biboSet[0].id = 1100;
+
+        biboSet[1] =new Bank();
+        biboSet[1].bank_name = "SmallBoy";
+        biboSet[1].balance = 80000;
+        biboSet[1].name = "Kotak";
+        biboSet[1].id = 1101;
+
+        biboSet[2] =new Bank();
+        biboSet[2].bank_name = "Hiroshima";
+        biboSet[2].balance = 20000;
+        biboSet[2].name = "SwipePay";
+        biboSet[2].id = 1102;
+
+        biboSet[3] =new Bank();
+        biboSet[3].bank_name = "Nagasaki";
+        biboSet[3].balance = 2000000;
+        biboSet[3].name = "GoPay";
+        biboSet[3].id = 1103;
+
+        int n = 4;
+        int choice = 2;
+        while(choice !=0){
+            System.out.println("-------------------------------------------------------------------------------------");
+            System.out.println("1.  Create acc" +
+                    "\n2.  Withdraw" +
+                    "\n3.  Deposit" +
+                    "\n4.  View info" +
+                    "\n5.  Inter account transfer" +
+                    "\n0.  exit" +
+                    "\nEnter choice: ");
+            choice = sc.nextInt();
+            System.out.println("-------------------------------------------------------------------------------------");
+            switch (choice){
+                case 1: {
+                    biboSet[n] = new Bank();
+                    System.out.println("Enter name, balance and bank name.");
+                    String a = sc.nextLine();
+                    int b = sc.nextInt();
+                    String c = sc.nextLine();
+                    biboSet[n].acc_create(a,b,c,110+n);
+                    System.out.println("New user created your id: "+(110+n));
+                    n++;
+                    break;
+                }
+                case 2:{
+                    int flag = 0;
+                    System.out.println("Enter id: ");
+                    int id = sc.nextInt();
+                    for(Bank user:biboSet){
+                        if(user.id == id){
+                            flag++;
+                            System.out.println("User found\nEnter amount to withdraw:");
+                            int a = sc.nextInt();
+                            user.withdraw(a);
+                        }
+                    }
+                    if (flag==0)System.out.println("Error user not found");
+                    break;
+                }
+                case 3: {
+                    int flag = 0;
+                    System.out.println("Enter id: ");
+                    int id = sc.nextInt();
+                    for(Bank user:biboSet){
+                        if(user.id == id){
+                            flag++;
+                            System.out.println("User found\nEnter amount to deposit:");
+                            int a = sc.nextInt();
+                            user.deposit(a);
+                        }
+                    }
+                    if (flag==0)System.out.println("Error user not found");
+                    break;
+                }
+                case 4: {
+                    int flag = 0;
+                    System.out.println("Enter id: ");
+                    int id = sc.nextInt();
+                    for(Bank user:biboSet){
+                        if(user.id == id){
+                            user.display();
+                        }
+                    }
+                    if (flag==0)System.out.println("Error user not found");
+                    break;
+                }
+                case 5: {
+                    int flag = 0;
+                    System.out.println("Enter id of the account to credit(from): ");
+                    int id = sc.nextInt();
+                    for(Bank user:biboSet){
+                        if(user.id == id){
+                            flag++;
+                            System.out.println("User found\nEnter id of the account to debit(To): ");
+                            int id2 = sc.nextInt();
+                            for(Bank user2:biboSet){
+                                if(user2.id == id2){
+                                    flag++;
+                                    System.out.println("User found\nEnter money to transer: ");
+                                    int amount = sc.nextInt();
+                                    if(amount>user.balance){
+                                        System.out.println("Insuficient funds");
+                                    }
+                                    else{
+                                        user.withdraw(amount);
+                                        user2.deposit(amount);
+                                    }
+                                }
+
+                            }
+                        }
+
+                    }
+                    if (flag<2)System.out.println("Error one of the users not found");
+                    break;
+                }
+            }
+        }
+
+    }
+}
