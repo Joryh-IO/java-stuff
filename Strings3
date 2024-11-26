@@ -1,0 +1,95 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+
+public class Main {
+
+     static int happynumber(int n){
+        int sum = 0;
+        while(n!=0){
+            int digit = n%10;
+            sum += digit*digit;
+            n = n/10;
+        }
+        System.out.println(sum);
+        if(sum ==1 || sum== 4)return sum;
+        else happynumber(sum);
+        return sum;
+    }
+
+
+    static String rem(String s, char a){
+         String ans="";
+         for(int i=0; i<s.length(); i++){
+             if(s.charAt(i)!=a)ans += s.charAt(i);
+         }
+         return ans;
+    }
+
+    public static void main(String[] args){
+
+        Scanner sc = new Scanner(System.in);
+        //printing elements of an array in reverse
+//        int a[] = {1,2,3,4,5,6,7,8,9};
+//        for(int i=a.length-1; i>=0; i--)System.out.print(a[i]);
+
+        //happy number
+//        happynumber(32);
+//        int n = 32;
+//        if(happynumber(n) == 1)System.out.println("Happy number 😊");
+//        else System.out.println("Sad number 😔");
+
+
+
+        //average
+//        int a[] = {1,2,3,4,5,6,7,8,9};
+//        int sum=0;
+//        for(int i=0; i< a.length; i++) sum+=a[i];
+//        System.out.println("Average: "+(sum/a.length));
+
+
+
+        //reverse each word in a sentence
+//        String a = "Hello blue weird looking earth";
+//        String a1[] = a.split(" ");
+//        for(String x:a1){
+//            for(int i=x.length()-1; i>=0; i--){
+//                System.out.print(x.charAt(i));
+//            }
+//            System.out.print(" ");
+//        }
+
+
+
+        //anagrams
+//        String d = "peek";
+//        char d1[] = d.toCharArray();
+//        String e = "keep";
+//        char e1[] = e.toCharArray();
+//        Arrays.sort(d1);
+//        Arrays.sort(e1);
+//        if(d1.length == e1.length) {
+//            if (Arrays.equals(d1, e1)) System.out.println("yes");
+//            else System.out.println("no");
+//        }
+//        else System.out.println("no");
+
+
+
+        //Removing characters from string
+//        System.out.println(rem("aeroplane", 'a'));
+
+
+        //swapping strings
+//        String a = "Hello";
+//        String b = "World";
+//        a = a+b;
+//        b = a.substring(0,b.length());
+//        a = a.substring(b.length(),a.length());
+//        System.out.println("a: "+a+"\nb: "+b);
+
+
+
+        //Frequency of characters
+    }
+}
