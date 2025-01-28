@@ -1,0 +1,53 @@
+body{
+    margin: 0;
+    background-color: rgb(205, 241, 218);
+
+}
+
+.nav{
+    background-color: rgb(189, 48, 232);
+    margin: 0px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h3{
+    margin: 0;
+    padding: 0;
+    color: rgb(255, 255, 255);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2.5rem;
+}
+
+p{
+    margin: 0;
+    color: rgb(0, 0, 0);
+    font-size: 10pt;
+}
+
+.option{
+    border-radius: 20px;
+    margin: 30px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: rgb(226, 226, 44) solid;
+    padding: 20px;
+    background-color: rgb(230, 220, 111);
+}
+
+.data{
+    display: flex;
+    justify-content: center;
+}
+
+.data table{
+    width: 80%;
+    border: black solid;
+}
+
+.data td{
+    text-align: center;
+}
