@@ -18,8 +18,8 @@ import java.sql.ResultSet;
 public class SignUp extends HttpServlet {
 	String DRIVER = "com.mysql.cj.jdbc.Driver";
 	String USERNAME = "root";
-	String PASSWORD = "Sujeeth123";
-	String DATABASE = "Bogota";
+	String PASSWORD = "XXXXXXX";
+	String DATABASE = "XXXXXXX";
 	String SERVER = "jdbc:mysql://localhost:3306/";
 	private static final long serialVersionUID = 1L;
        

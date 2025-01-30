@@ -17,8 +17,8 @@ import com.mysql.cj.protocol.x.SyncFlushDeflaterOutputStream;
 @WebServlet("/login")
 public class Login extends HttpServlet {
 	String DRIVER = "com.mysql.cj.jdbc.Driver";
-	String USERNAME = "root";
-	String PASSWORD = "Sujeeth123";
+	String USERNAME = "XXXXXXX";
+	String PASSWORD = "XXXXXXX";
 	String DATABASE = "Bogota";
 	String SERVER = "jdbc:mysql://localhost:3306/";
 	private static final long serialVersionUID = 1L;
